@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Handlebars Demo</title>
+
+<!-- Load jQuery; we would typically load it from a CDN. -->
+<script src="jquery.min.js"></script>
+
+<!-- Load Handlebars; we would typically load it from a CDN. -->
+<script src="handlebars.min.js"></script>
+
+<!-- Create our own Handlebars template -->
+<script id="template" type="text/x-handlebars-template">
+I like the song {{title}} by {{artist}}
+</script>
+
+<!-- Compile the template for speed -->
+<script>
+var template = Handlebars.compile($("#template").html());
+</script>
+
+</head>
+<body>
+
+Handlebars demo page.
+
+Here is some static content.
+
+<div id="dynamic">Here is some dynamic content.</div>
+
+<script>
+  $().ready(function() {
+    $.getJSON("song.json", function(data){
+      $('#dynamic').html((template(data)));
+    })
+    .success(function(){ 
+      console.log("success"); 
+    })
+    .error(function(jqXHR, textStatus, errorThrown){
+      console.log("error");
+      console.log("text status: " + textStatus);
+      console.log("response text: " + jqXHR.responseText);
+    })
+    .complete(function(){
+      console.log("complete");
+    });
+  });
+</script>
+
+</body>
+</html>
+
