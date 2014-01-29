@@ -11,10 +11,7 @@
 
 <!-- Create our own Handlebars template -->
 <script id="template" type="text/x-handlebars-template">
-
-<br>My favorite food: {{name}}
-<br>The color is: {{color}}
-
+I like the song {{title}} by {{artist}}
 </script>
 
 <!-- Compile the template for speed -->
@@ -25,8 +22,8 @@ var template = Handlebars.compile($("#template").html());
 <!-- Create our JSON data that we will put into the template -->
 <script>
 var data = {
-  name: "apple", 
-  color: "red"
+  title: "Like A Rolling Stone", 
+  artist: "Bob Dylan"
 };
 </script>
 
