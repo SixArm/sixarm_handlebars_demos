@@ -1,0 +1,45 @@
+<html>
+<head>
+
+<title>Handlebars Demo 1: Easy One Page</title>
+
+<!-- Load jQuery; we would typically load it from a CDN. -->
+<script src="jquery.min.js"></script>
+
+<!-- Load Handlebars; we would typically load it from a CDN. -->
+<script src="handlebars.min.js"></script>
+
+<!-- Create our own Handlebars template -->
+<script id="template" type="text/x-handlebars-template">
+
+<br>My favorite food: {{name}}
+<br>The color is: {{color}}
+
+</script>
+
+<!-- Compile the template for speed -->
+<script>
+var template = Handlebars.compile($("#template").html());
+</script>
+
+<!-- Create our JSON data that we will put into the template -->
+<script>
+var data = {
+  name: "apple", 
+  color: "red"
+};
+</script>
+
+</head>
+<body>
+
+<h1>Handlebars Demo 1: Easy One Page</h1>
+
+Here is some static content.
+
+<div id="dynamic">Here is some dynamic content.</div>
+<script>$("#dynamic").html(template(data));</script>
+
+</body>
+</html>
+
