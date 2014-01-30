@@ -1,4 +1,4 @@
-# Handlebars Demo 2: Get JSON data with AJAX
+# Handlebars Demo 2:<br>Get JSON data with AJAX
 
 This demo uses the jQuery method `.getJSON()` with AJAX to request the data.
 

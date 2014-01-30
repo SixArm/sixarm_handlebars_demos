@@ -1,4 +1,4 @@
-# Handlebars Demo 1: Easy One Page
+# Handlebars Demo 1:<br>Easy One Page
 
 This demo is the simplest.
 
